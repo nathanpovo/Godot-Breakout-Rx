@@ -1,0 +1,20 @@
+<Project Sdk="Godot.NET.Sdk/4.2.0-dev.6">
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <!-- Required for some nuget packages to work -->
+    <!-- godotengine/godot/issues/42271#issuecomment-751423827 -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Include the godot files to see them in the solution view -->
+    <!-- It is also useful to include them in case we need to perform any source generation -->
+    <None Include="project.godot" />
+    <None Include="*.tscn" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="6.0.0" />
+  </ItemGroup>
+</Project>

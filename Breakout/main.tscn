@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://du7hlwjl6vw6l"]
+
+[ext_resource type="Script" path="res://Main.cs" id="1_prpoe"]
+[ext_resource type="PackedScene" uid="uid://be852v5r1ao14" path="res://brick.tscn" id="2_nqkh5"]
+[ext_resource type="Script" path="res://GameObjects/Paddle.cs" id="3_yothi"]
+[ext_resource type="Script" path="res://GameObjects/Ball.cs" id="4_2gpna"]
+[ext_resource type="Script" path="res://GameObjects/Ceiling.cs" id="5_3yly5"]
+[ext_resource type="Script" path="res://GameObjects/Wall.cs" id="6_ehekq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lswkg"]
+size = Vector2(38, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrrux"]
+size = Vector2(10, 6)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4snhu"]
+a = Vector2(298, 26)
+b = Vector2(-298, 26)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_eeaje"]
+a = Vector2(0, 360)
+b = Vector2(0, -360)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hnp2d"]
+a = Vector2(0, 360)
+b = Vector2(0, -360)
+
+[sub_resource type="Curve2D" id="Curve2D_xssxf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 20, 360, 0, 0, 0, 0, 576, 360)
+}
+point_count = 2
+
+[node name="Main" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_prpoe")
+BrickScene = ExtResource("2_nqkh5")
+metadata/_edit_lock_ = true
+
+[node name="Paddle" type="CharacterBody2D" parent="."]
+position = Vector2(298, 683)
+motion_mode = 1
+platform_on_leave = 2
+script = ExtResource("3_yothi")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource("RectangleShape2D_lswkg")
+
+[node name="Polygon2D" type="Polygon2D" parent="Paddle"]
+color = Color(0, 0.494118, 0.772549, 1)
+polygon = PackedVector2Array(-19, -7, 19, -7, 19, 7, -19, 7)
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(248, 516)
+script = ExtResource("4_2gpna")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("RectangleShape2D_rrrux")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ball"]
+polygon = PackedVector2Array(-5, -3, 5, -3, 5, 3, -5, 3)
+
+[node name="Walls" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Top" type="StaticBody2D" parent="Walls"]
+position = Vector2(298, 0)
+script = ExtResource("5_3yly5")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top"]
+shape = SubResource("SegmentShape2D_4snhu")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Top"]
+polygon = PackedVector2Array(298, 26, 298, 0, -298, 0, -298, 26)
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 360)
+script = ExtResource("6_ehekq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+shape = SubResource("SegmentShape2D_eeaje")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Left"]
+polygon = PackedVector2Array(0, -360, 10, -360, 10, 360, 0, 360)
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+position = Vector2(596, 360)
+script = ExtResource("6_ehekq")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+shape = SubResource("SegmentShape2D_hnp2d")
+
+[node name="Polygon2D" type="Polygon2D" parent="Walls/Right"]
+polygon = PackedVector2Array(-10, -360, 0, -360, 0, 360, -10, 360)
+
+[node name="Bricks" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StartPosition" type="Marker2D" parent="Bricks"]
+position = Vector2(31, 148)
+gizmo_extents = 600.0
+metadata/_edit_lock_ = true
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xssxf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(20, 360)
