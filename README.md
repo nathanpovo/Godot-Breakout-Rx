@@ -1,3 +1,18 @@
+https://github.com/jas-chen/rx-redux
+
+https://redux.js.org/understanding/history-and-design/prior-art
+
+https://github.com/rofrol/awesome-elm-gamedev
+
+https://jessewarden.com/2019/10/react-redux-thunk-vs-elm.html
+
+https://stackoverflow.com/questions/35664594/redux-why-is-state-all-in-one-place-even-state-that-isnt-global
+
+https://news.ycombinator.com/item?id=13527473
+
+https://github.com/dshalkhakov/sam-csharp
+
+
 # RxJS Breakout
 
 [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)) using [Functional Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) and RxJS
