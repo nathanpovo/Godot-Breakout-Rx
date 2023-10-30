@@ -1,3 +1,7 @@
+https://thomasbandt.com/fsharp-redux-store-for-xamarin-apps
+
+https://github.com/GuillaumeSalles/redux.NET/issues/69
+
 https://github.com/jas-chen/rx-redux
 
 https://redux.js.org/understanding/history-and-design/prior-art
