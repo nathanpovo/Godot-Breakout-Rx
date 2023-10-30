@@ -12,6 +12,9 @@ https://news.ycombinator.com/item?id=13527473
 
 https://github.com/dshalkhakov/sam-csharp
 
+https://www.reddit.com/r/gamedev/comments/gefl7g/reduxlike_container_for_game_state_pros_and_cons/
+
+https://github.com/mattak/Unidux
 
 # RxJS Breakout
 
