@@ -1,3 +1,7 @@
+https://github.com/Dobiasd/Breakout
+
+https://rundis.github.io/blog/2015/elm_sweeper.html
+
 https://thomasbandt.com/fsharp-redux-store-for-xamarin-apps
 
 https://github.com/GuillaumeSalles/redux.NET/issues/69
