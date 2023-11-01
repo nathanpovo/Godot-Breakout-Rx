@@ -24,6 +24,10 @@ https://www.reddit.com/r/gamedev/comments/gefl7g/reduxlike_container_for_game_st
 
 https://github.com/mattak/Unidux
 
+https://www.youtube.com/watch?v=AMUv8KvVt08
+
+---
+
 # RxJS Breakout
 
 [Breakout](https://en.wikipedia.org/wiki/Breakout_(video_game)) using [Functional Reactive Programming](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754) and RxJS
